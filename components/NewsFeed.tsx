@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, ActivityIndicator, ScrollView, RefreshControl,Dimensions } from 'react-native';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { formatDistanceToNow } from 'date-fns';
-import kyInstance from '../lib/ky'; // If you have this, otherwise we'll use fetch
+ // If you have this, otherwise we'll use fetch
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { MessageCircle, Heart } from 'lucide-react-native';

@@ -13,6 +13,7 @@ export default function HomeScreen({ navigation }: Props) {
   return (
     <View className="flex-1">
       <Header navigation={navigation} />
+
       <View className="flex-1 bg-gray-50">
         <NewsFeed />
       </View>
