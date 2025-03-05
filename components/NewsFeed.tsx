@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity, ActivityIndicator, ScrollView, RefreshControl } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ActivityIndicator, ScrollView, RefreshControl,Dimensions } from 'react-native';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { formatDistanceToNow } from 'date-fns';
 import kyInstance from '../lib/ky'; // If you have this, otherwise we'll use fetch
