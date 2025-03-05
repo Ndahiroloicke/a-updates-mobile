@@ -47,7 +47,7 @@ export default function PostDetailScreen() {
         <TouchableOpacity onPress={() => navigation.goBack()} className="mr-3">
           <ChevronLeft color="#16A34A" size={24} />
         </TouchableOpacity>
-        <Text className="text-lg font-semibold">Article</Text>
+        <Text className="text-lg font-['Poppins-SemiBold']">Article</Text>
       </View>
 
       <ScrollView className="flex-1">
@@ -67,7 +67,7 @@ export default function PostDetailScreen() {
         <View className="p-4">
           {/* Category Badge */}
           <View className="bg-green-500 self-start rounded-full px-3 py-1 mb-4">
-            <Text className="text-white text-xs font-medium uppercase">
+            <Text className="text-white text-xs font-['Poppins-Medium'] uppercase">
               {post.category || 'SPORTS'}
             </Text>
           </View>
@@ -80,10 +80,10 @@ export default function PostDetailScreen() {
               </Text>
             </View>
             <View className="ml-3">
-              <Text className="font-medium text-green-600">{post.user.displayName}</Text>
+              <Text className="font-['Poppins-Medium'] text-green-600">{post.user.displayName}</Text>
               <View className="flex-row items-center">
                 <Calendar size={12} color="#666666" />
-                <Text className="text-xs text-gray-500 ml-1">
+                <Text className="text-xs text-gray-500 ml-1 font-sans">
                   {formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })}
                 </Text>
               </View>
@@ -91,12 +91,12 @@ export default function PostDetailScreen() {
           </View>
 
           {/* Title */}
-          <Text className="text-2xl font-bold text-gray-900 mb-4">
+          <Text className="text-2xl font-['Poppins-Bold'] text-gray-900 mb-4">
             {post.title}
           </Text>
 
           {/* Full Description */}
-          <Text className="text-base text-gray-600 leading-relaxed mb-6">
+          <Text className="text-base text-gray-600 leading-relaxed mb-6 font-['Poppins-Regular']">
             {post.description}
           </Text>
 

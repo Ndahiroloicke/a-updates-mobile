@@ -43,7 +43,7 @@ export default function CommentInput({ postId }: CommentInputProps) {
   return (
     <View className="flex-row items-center space-x-2 p-2 bg-gray-50 rounded-lg">
       <TextInput
-        className="flex-1 bg-white p-2 rounded-md border border-gray-200"
+        className="flex-1 bg-white p-2 rounded-md border border-gray-200 font-sans"
         placeholder="Write a comment..."
         value={comment}
         onChangeText={setComment}

@@ -54,7 +54,7 @@ export default function BottomNavBar() {
           <View className={`mb-1 ${item.label === 'Post' ? 'mt-[-20]' : ''}`}>
             {item.icon}
           </View>
-          <Text className="text-xs text-gray-600">{item.label}</Text>
+          <Text className="text-xs text-gray-600 font-medium">{item.label}</Text>
         </TouchableOpacity>
       ))}
     </View>

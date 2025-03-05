@@ -140,17 +140,18 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     fontSize: 32,
-    fontWeight: "bold",
+    fontFamily: 'Poppins-Bold',
     color: "#111827",
   },
   brandText: {
     fontSize: 32,
-    fontWeight: "bold",
+    fontFamily: 'Poppins-Bold',
     color: "#10B981",
     marginBottom: 10,
   },
   subtitleText: {
     fontSize: 16,
+    fontFamily: 'Poppins-Regular',
     color: "#6B7280",
     marginTop: 8,
   },
@@ -175,7 +176,7 @@ const styles = StyleSheet.create({
   },
   googleButtonText: {
     color: "#374151",
-    fontWeight: "600",
+    fontFamily: 'Poppins-SemiBold',
     fontSize: 16,
   },
   dividerContainer: {
@@ -198,7 +199,7 @@ const styles = StyleSheet.create({
   },
   inputLabel: {
     fontSize: 16,
-    fontWeight: "500",
+    fontFamily: 'Poppins-Medium',
     color: "#4B5563",
     marginBottom: 8,
     marginLeft: 4,
@@ -245,7 +246,7 @@ const styles = StyleSheet.create({
   },
   forgotPasswordText: {
     color: "#10B981",
-    fontWeight: "500",
+    fontFamily: 'Poppins-Medium',
   },
   signInButtonContainer: {
     borderRadius: 12,
@@ -263,7 +264,7 @@ const styles = StyleSheet.create({
   },
   signInButtonText: {
     color: "white",
-    fontWeight: "bold",
+    fontFamily: 'Poppins-Bold',
     fontSize: 18,
   },
   signUpContainer: {
@@ -273,11 +274,12 @@ const styles = StyleSheet.create({
   },
   signUpText: {
     color: "#6B7280",
+    fontFamily: 'Poppins-Regular',
     fontSize: 16,
   },
   signUpLink: {
     color: "#10B981",
-    fontWeight: "600",
+    fontFamily: 'Poppins-SemiBold',
     fontSize: 16,
   },
 })

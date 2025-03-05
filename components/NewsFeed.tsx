@@ -5,6 +5,7 @@ import { formatDistanceToNow } from 'date-fns';
 import kyInstance from '../lib/ky'; // If you have this, otherwise we'll use fetch
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { MessageCircle, Heart } from 'lucide-react-native';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -63,10 +64,9 @@ export default function NewsFeed() {
   };
 
   const renderPost = (post: Post) => (
-    <TouchableOpacity 
+    <View 
       key={post.id} 
       className="bg-white rounded-xl mb-4 overflow-hidden"
-      onPress={() => handlePostPress(post.id)}
     >
       {post.attachments?.[0]?.url && (
         <Image
@@ -78,8 +78,18 @@ export default function NewsFeed() {
       
       <View className="p-4">
         <View className="flex-row items-center mb-2">
-          <View className="h-10 w-10 rounded-full bg-gray-100 justify-center items-center mr-3">
-            <Text className="text-gray-500">🎤</Text>
+          <View className="h-10 w-10 rounded-full overflow-hidden mr-3">
+            {post.user.avatarUrl ? (
+              <Image
+                source={{ uri: post.user.avatarUrl }}
+                className="h-10 w-10"
+                resizeMode="cover"
+              />
+            ) : (
+              <View className="h-10 w-10 rounded-full bg-gray-100 justify-center items-center">
+                <Text className="text-gray-500">🎤</Text>
+              </View>
+            )}
           </View>
           <View className="flex-1">
             <Text className="text-green-600 font-medium">{post.user.displayName}</Text>
@@ -88,35 +98,44 @@ export default function NewsFeed() {
             </Text>
           </View>
           <View className="bg-green-500 rounded-full px-3 py-1">
-            <Text className="text-white text-xs font-medium uppercase">
+            <Text className="text-white text-xs font-['Poppins-Medium'] uppercase">
               {post.category || 'SPORTS'}
             </Text>
           </View>
         </View>
 
-        <Text className="text-navy-900 text-xl font-bold mb-2">
+        <Text className="text-navy-900 text-xl font-['Poppins-Bold'] mb-2">
           {post.title}
         </Text>
         
-        <Text className="text-gray-600 mb-3" numberOfLines={2}>
+        <Text className="text-gray-600 mb-3 font-['Poppins-Regular']" numberOfLines={2}>
           {post.description}
         </Text>
 
         <View className="flex-row items-center">
-          <View className="flex-row items-center mr-4">
-            <Text className="mr-1">💬</Text>
+          <TouchableOpacity 
+            className="flex-row items-center mr-4" 
+            onPress={() => {}}
+          >
+            <MessageCircle size={18} color="#4B5563" className="mr-1" />
             <Text className="text-gray-600">{post._count.comments}</Text>
-          </View>
-          <View className="flex-row items-center">
-            <Text className="mr-1">❤️</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            className="flex-row items-center" 
+            onPress={() => {}}
+          >
+            <Heart size={18} color="#4B5563" className="mr-1" />
             <Text className="text-gray-600">{post._count.likes}</Text>
-          </View>
-          <View className="flex-1 items-end">
-            <Text className="text-green-600">Read more</Text>
-          </View>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            className="ml-auto bg-green-500 px-3 py-1 rounded-md" 
+            onPress={() => handlePostPress(post.id)}
+          >
+            <Text className="text-white text-sm">Read more</Text>
+          </TouchableOpacity>
         </View>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 
   if (status === 'pending') {
@@ -154,19 +173,11 @@ export default function NewsFeed() {
       }}
       scrollEventThrottle={400}
     >
-      <Text className="text-3xl font-bold text-green-600 mb-6">
+      <Text className="text-3xl font-bold text-green-600 mb-6 font-['Poppins-Bold']">
         Latest Posts
       </Text>
       
-      {allPosts.map((post) => (
-        <TouchableOpacity 
-          key={post.id}
-          className="bg-white rounded-xl mb-4 overflow-hidden"
-          onPress={() => navigation.navigate('PostDetail', { postId: post.id })}
-        >
-          {renderPost(post)}
-        </TouchableOpacity>
-      ))}
+      {allPosts.map((post) => renderPost(post))}
 
       {isFetching && (
         <ActivityIndicator className="py-4" size="small" color="#16A34A" />

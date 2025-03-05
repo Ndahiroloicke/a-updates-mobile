@@ -11,7 +11,7 @@ export default function Header({ navigation }: HeaderProps) {
   return (
     <SafeAreaView className="bg-white border-b border-gray-200">
       <View className="flex-row justify-between items-center px-4 py-3">
-        <Text className="text-2xl font-bold text-green-600">
+        <Text className="text-2xl font-['Poppins-Bold'] text-green-600">
           Africa Updates
         </Text>
         <TouchableOpacity 

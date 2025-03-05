@@ -47,7 +47,7 @@ export default function Comments({ postId, user }: CommentsProps) {
           disabled={isFetching}
           className="py-2"
         >
-          <Text className="text-green-600 text-center">
+          <Text className="text-green-600 text-center font-medium">
             Load previous comments
           </Text>
         </TouchableOpacity>
@@ -58,7 +58,7 @@ export default function Comments({ postId, user }: CommentsProps) {
       )}
 
       {status === 'success' && !comments.length && (
-        <Text className="text-gray-500 text-center">
+        <Text className="text-gray-500 text-center font-sans">
           No comments yet.
         </Text>
       )}

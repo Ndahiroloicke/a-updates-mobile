@@ -127,11 +127,12 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 28,
-    fontWeight: "bold",
+    fontFamily: 'Poppins-Bold',
     color: "#111827",
   },
   headerSubtitle: {
     fontSize: 18,
+    fontFamily: 'Poppins-Regular',
     color: "#6B7280",
     marginTop: 8,
   },
@@ -183,7 +184,7 @@ const styles = StyleSheet.create({
   },
   createAccountButtonText: {
     color: "white",
-    fontWeight: "bold",
+    fontFamily: 'Poppins-Bold',
     fontSize: 16,
   },
   termsText: {
@@ -191,6 +192,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 14,
     lineHeight: 20,
+    fontFamily: 'Poppins-Regular',
     marginBottom: 24,
   },
   loginContainer: {
@@ -201,10 +203,11 @@ const styles = StyleSheet.create({
   loginText: {
     color: "#6B7280",
     fontSize: 16,
+    fontFamily: 'Poppins-Regular',
   },
   loginLink: {
     color: "#10B981",
-    fontWeight: "600",
+    fontFamily: 'Poppins-SemiBold',
     fontSize: 16,
   },
 })
