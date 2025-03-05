@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity, ActivityIndicator, ScrollView, RefreshControl } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ActivityIndicator, ScrollView, RefreshControl, Dimensions } from 'react-native';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { formatDistanceToNow } from 'date-fns';
 import kyInstance from '../lib/ky'; // If you have this, otherwise we'll use fetch
@@ -63,11 +63,7 @@ export default function NewsFeed() {
   };
 
   const renderPost = (post: Post) => (
-    <TouchableOpacity 
-      key={post.id} 
-      className="bg-white rounded-xl mb-4 overflow-hidden"
-      onPress={() => handlePostPress(post.id)}
-    >
+    <View className="bg-white rounded-xl mb-4 overflow-hidden">
       {post.attachments?.[0]?.url && (
         <Image
           source={{ uri: post.attachments[0].url }}
@@ -116,7 +112,7 @@ export default function NewsFeed() {
           </View>
         </View>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 
   if (status === 'pending') {
@@ -161,7 +157,7 @@ export default function NewsFeed() {
       {allPosts.map((post) => (
         <TouchableOpacity 
           key={post.id}
-          className="bg-white rounded-xl mb-4 overflow-hidden"
+          className="mb-4"
           onPress={() => navigation.navigate('PostDetail', { postId: post.id })}
         >
           {renderPost(post)}
